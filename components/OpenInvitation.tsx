@@ -189,7 +189,7 @@ export default function OpenInvitation({
                     Undangan Pernikahan
                   </p>
                   <h1 className="mb-4 text-3xl font-serif uppercase tracking-[0.2em] text-white drop-shadow-[0_8px_30px_rgba(255,255,255,0.25)] sm:text-5xl">
-                    Melnia <br />&<br /> Anggita
+                    Anggita <br />&<br /> Melnia
                   </h1>
                   <p className="mx-auto mb-5 max-w-xl text-xs leading-6 text-white/90 sm:text-sm">
                     Dengan senang hati kami mengundang Anda merayakan momen spesial kami. Hadir dan bersama-sama menciptakan kenangan indah dalam hari istimewa ini.

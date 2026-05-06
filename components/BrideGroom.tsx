@@ -5,14 +5,14 @@ import Image from "next/image";
 
 const brideGroomData = [
   {
-    name: "Melnia Riska Ramadhani",
-    title: "Putri dari Bpk. Suhadi & Ibu Dwi Lestari",
-    image: "/images/1.jpeg",
+    name: "Anggita Kurniawan",
+    title: "Putra Pertama dari Bpk. Aris Karyono & Ibu Murni",
+    image: "/images/2.jpeg",
   },
   {
-    name: "Anggita Kurniawan",
-    title: "Putra dari Bpk. Aris Karyono & Ibu Murni",
-    image: "/images/2.jpeg",
+    name: "Melnia Riska Ramadhani",
+    title: "Putri Pertama dari Bpk. Suhadi (Tembong) & Ibu Dwi Lestari",
+    image: "/images/1.jpeg",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function BrideGroom() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 transition duration-500 group-hover:opacity-100" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-left text-white">
                 <p className="text-sm uppercase tracking-[0.24em] text-white/90">
-                  {index === 0 ? "The Bride" : "The Groom"}
+                  {index === 0 ? "The Groom" : "The Bride"}
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold leading-tight text-white">
                   {person.name}

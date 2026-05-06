@@ -26,103 +26,124 @@ const GiftCard = ({ bankName, accountNumber, accountHolder, logoSrc }: GiftCardP
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: [0.2, 0.9, 0.2, 1] }}
       whileHover={{ 
-        y: -12, 
-        rotateX: 5,
-        rotateY: -5,
-        transition: { duration: 0.3 } 
+        y: -8, 
+        scale: 1.02,
+        transition: { duration: 0.4, ease: "easeOut" } 
       }}
-      className="group relative overflow-hidden rounded-[24px] border border-white/20 bg-gradient-to-br from-white/15 via-white/10 to-white/5 p-6 shadow-[
-        0_20px_50px_rgba(0,0,0,0.25),
-        0_0_0_1px_rgba(255,255,255,0.1)_inset,
-        -10px_-10px_30px_rgba(255,255,255,0.05)_inset,
-        10px_10px_30px_rgba(0,0,0,0.3)_inset
-      ] backdrop-blur-xl transition-all duration-500 hover:border-white/40 hover:shadow-[
-        0_30px_60px_rgba(0,0,0,0.35),
-        0_0_0_1px_rgba(255,255,255,0.15)_inset,
-        -15px_-15px_40px_rgba(255,255,255,0.08)_inset,
-        15px_15px_40px_rgba(0,0,0,0.4)_inset
+      className="group relative overflow-hidden rounded-[28px] border border-white/15 bg-gradient-to-br from-white/10 via-white/8 to-white/3 p-7 shadow-[
+        0_25px_60px_rgba(0,0,0,0.3),
+        0_0_0_1px_rgba(255,255,255,0.08)_inset,
+        -12px_-12px_35px_rgba(255,255,255,0.06)_inset,
+        12px_12px_35px_rgba(0,0,0,0.35)_inset
+      ] backdrop-blur-xl transition-all duration-700 hover:border-white/25 hover:shadow-[
+        0_35px_80px_rgba(0,0,0,0.4),
+        0_0_0_1px_rgba(255,255,255,0.12)_inset,
+        -18px_-18px_45px_rgba(255,255,255,0.1)_inset,
+        18px_18px_45px_rgba(0,0,0,0.45)_inset
       ]"
     >
-      {/* Decorative gradient */}
-      <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-gradient-to-br from-gold/30 to-transparent opacity-50 blur-2xl transition duration-500 group-hover:opacity-70" />
+      {/* Premium decorative elements */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileHover={{ opacity: 0.6, scale: 1.2 }}
+        transition={{ duration: 0.6 }}
+        className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-gradient-to-br from-gold/20 to-transparent blur-3xl"
+      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ duration: 2, delay: 0.5 }}
+        className="absolute -left-16 -bottom-16 h-32 w-32 rounded-full bg-gradient-to-tr from-white/10 to-transparent blur-2xl"
+      />
 
       <div className="relative z-10">
-        {/* Bank/E-wallet Logo - Pop in animation */}
-        <motion.div
-          initial={{ scale: 0, rotate: -180 }}
-          whileInView={{ scale: 1, rotate: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-          className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl p-2 shadow-lg border border-white"
-        >
-          <Image
-            src={logoSrc}
-            alt={`${bankName} logo`}
-            width={40}
-            height={40}
-            className="h-full w-full object-contain"
-          />
-        </motion.div>
+        <div className="flex items-start gap-4 mb-6">
+          {/* Premium Bank Logo with enhanced animation */}
+          <motion.div
+            initial={{ scale: 0, rotate: -180, opacity: 0 }}
+            whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ 
+              duration: 0.8, 
+              type: "spring", 
+              stiffness: 150,
+              damping: 15,
+              delay: 0.1
+            }}
+            className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-4 shadow-xl border border-white/20 backdrop-blur-sm flex-shrink-0"
+          >
+            <Image
+              src={logoSrc}
+              alt={`${bankName} logo`}
+              width={64}
+              height={64}
+              className="h-full w-full object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+            />
+          </motion.div>
 
-        {/* Bank Name - Slide from left */}
-        <motion.h3 
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="mb-1 text-lg font-semibold text-white font-serif tracking-wide"
-        >
-          {bankName}
-        </motion.h3>
+          {/* Bank Info beside logo */}
+          <div className="flex-1 min-w-0">
+            {/* Bank Name with premium typography */}
+            <motion.h3 
+              initial={{ opacity: 0, x: -30, filter: "blur(4px)" }}
+              whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0.9, 0.2, 1] }}
+              className="mb-1 text-xl font-serif text-white font-semibold tracking-wide"
+            >
+              {bankName}
+            </motion.h3>
 
-        {/* Account Holder - Fade in */}
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="mb-4 text-sm text-white/70"
-        >
-          {accountHolder}
-        </motion.p>
+            {/* Account Holder with subtle animation */}
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              className="text-sm text-white/70 font-light"
+            >
+              {accountHolder}
+            </motion.p>
+          </div>
+        </div>
 
-        {/* Account Number - Slide up */}
+        {/* Premium Account Number section */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="flex items-center justify-between rounded-[12px] border border-white/10 bg-white/5 px-4 py-3 text-white"
+          transition={{ duration: 0.6, delay: 0.4, ease: [0.2, 0.9, 0.2, 1] }}
+          className="flex items-center justify-between rounded-[16px] border border-white/10 bg-gradient-to-r from-white/8 to-white/4 px-5 py-4 backdrop-blur-sm"
         >
-          <span className="font-mono text-lg tracking-wider text-gold-light">
+          <span className="font-mono text-2xl tracking-[0.2em] text-white font-medium">
             {accountNumber}
           </span>
           <motion.button
             onClick={handleCopy}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="relative flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-gold to-[#f1c462] px-3 py-1.5 text-xs font-semibold text-black transition duration-300 hover:shadow-[0_4px_15px_rgba(201,169,110,0.4)]"
+            whileHover={{ scale: 1.08, boxShadow: "0 8px 25px rgba(201,169,110,0.3)" }}
+            whileTap={{ scale: 0.96 }}
+            className="relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-gold via-[#d4af37] to-[#f1c462] px-4 py-2.5 text-sm font-semibold text-black transition-all duration-300 shadow-lg"
           >
-            {copied ? (
-              <>
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <motion.div
+              animate={copied ? { rotate: 360 } : { rotate: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {copied ? (
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Copied!</span>
-              </>
-            ) : (
-              <>
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              ) : (
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                <span>Copy</span>
-              </>
-            )}
+              )}
+            </motion.div>
+            <span>{copied ? "Copied!" : "Copy"}</span>
           </motion.button>
         </motion.div>
       </div>
@@ -133,21 +154,15 @@ const GiftCard = ({ bankName, accountNumber, accountHolder, logoSrc }: GiftCardP
 const giftData = [
   {
     bankName: "Bank Central Asia (BCA)",
-    accountNumber: "XXXXXXXXXXX",
-    accountHolder: "Melnia Riska Ramadhani",
+    accountNumber: "7660557185",
+    accountHolder: "Anggita Kurniawan",
     logoSrc: "/images/logo-bca.png",
   },
   {
-    bankName: "Bank Mandiri",
-    accountNumber: "XXXXXXXXXXX",
-    accountHolder: "Anggita Kurniawan",
-    logoSrc: "/images/logo-mandiri.png",
-  },
-  {
-    bankName: "DANA",
-    accountNumber: "XXXXXXXXXXX",
-    accountHolder: "Melnia Riska R",
-    logoSrc: "/images/logo-dana.png",
+    bankName: "Bank Central Asia (BCA)",
+    accountNumber: "7660538105",
+    accountHolder: "Melnia Riska Ramadhani",
+    logoSrc: "/images/logo-bca.png",
   },
 ];
 
@@ -164,7 +179,7 @@ export default function WeddingGift() {
 
       <div className="mx-auto max-w-5xl text-center">
         {/* Section Title - Fade in from top */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: -30, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
@@ -172,7 +187,7 @@ export default function WeddingGift() {
           className="mb-4 text-sm uppercase tracking-[0.35em] text-white"
         >
           Wedding Gift
-        </motion.p>
+        </motion.p> */}
 
         {/* Heading - Scale up fade in */}
         <motion.h2
@@ -186,47 +201,49 @@ export default function WeddingGift() {
         </motion.h2>
 
         {/* Description - Fade in from bottom */}
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/80 sm:text-base"
+          className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/90 sm:text-base relative z-20"
         >
           Doa restu Anda merupakan anugerah yang paling bermakna bagi kami. 
           Namun, jika Anda ingin memberikan hadiah, kami sangat berterima kasih.
-        </motion.p>
+        </motion.p> */}
 
-        {/* Gift Cards Grid - Different animations for each card */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Card 1 - Slide from left */}
+        {/* Gift Cards Grid - Premium animations for 2 BCA cards */}
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:gap-12">
+          {/* Card 1 - Elegant slide from left with rotation */}
           <motion.div
-            initial={{ opacity: 0, x: -50, rotate: -5 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+            initial={{ opacity: 0, x: -100, rotate: -8, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3, type: "spring", stiffness: 100 }}
+            transition={{ 
+              duration: 0.9, 
+              delay: 0.3, 
+              type: "spring", 
+              stiffness: 80,
+              damping: 20
+            }}
           >
             <GiftCard {...giftData[0]} />
           </motion.div>
 
-          {/* Card 2 - Scale up from center */}
+          {/* Card 2 - Elegant slide from right with rotation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 50 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, x: 100, rotate: 8, scale: 0.9 }}
+            whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.45, ease: "backOut" }}
+            transition={{ 
+              duration: 0.9, 
+              delay: 0.5, 
+              type: "spring", 
+              stiffness: 80,
+              damping: 20
+            }}
           >
             <GiftCard {...giftData[1]} />
-          </motion.div>
-
-          {/* Card 3 - Slide from right */}
-          <motion.div
-            initial={{ opacity: 0, x: 50, rotate: 5 }}
-            whileInView={{ opacity: 1, x: 0, rotate: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.6, type: "spring", stiffness: 100 }}
-          >
-            <GiftCard {...giftData[2]} />
           </motion.div>
         </div>
 

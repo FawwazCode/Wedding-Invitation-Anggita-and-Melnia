@@ -128,7 +128,7 @@ export default function Event() {
 
           <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-white/10 to-white/5 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:border-white/25 sm:p-8">
             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-white/5">
-              <span className="text-lg leading-none">⌁</span>
+              <span className="text-lg leading-none">✦</span>
             </div>
             <h3 className="text-xl font-semibold text-white sm:text-2xl">Lokasi</h3>
             <p className="mt-2 text-sm leading-7 text-white/80 sm:text-base">

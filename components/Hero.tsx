@@ -2,6 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Great_Vibes } from "next/font/google";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-great-vibes",
+});
 
 export default function Hero() {
   const scrollToEvent = () => {
@@ -40,28 +47,28 @@ export default function Hero() {
           <div className="text-center lg:text-left space-y-4">
 
   {/* Nama 1 */}
-  <h1 className="text-3xl font-serif leading-tight text-white sm:text-4xl md:text-5xl">
-    Melnia Riska Ramadhani
+  <h1 className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl leading-tight text-white`}>
+    Anggita Kurniawan
   </h1>
 
   {/* Orang tua 1 */}
   <p className="text-sm text-white/70 sm:text-base">
-    Putri dari Bpk. Suhadi & Ibu Dwi Lestari
+    Putra Pertama dari Bpk. Aris Karyono & Ibu Murni
   </p>
 
   {/* AND */}
-  <p className="italic text-white/80 text-lg tracking-widest">
+  <p className={`${greatVibes.className} text-white/80 text-3xl tracking-wide`}>
     And
   </p>
 
   {/* Nama 2 */}
-  <h1 className="text-3xl font-serif leading-tight text-white sm:text-4xl md:text-5xl">
-    Anggita Kurniawan
+  <h1 className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl leading-tight text-white`}>
+    Melnia Riska Ramadhani
   </h1>
 
   {/* Orang tua 2 */}
   <p className="text-sm text-white/70 sm:text-base">
-    Putra dari Bpk. Aris Karyono & Ibu Murni
+    Putri Pertama dari Bpk. Suhadi (Tembong) & Ibu Dwi Lestari
   </p>
 
 </div>

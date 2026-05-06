@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import WeddingGift from "@/components/WeddingGift";
+import DoaPelamin from "@/components/DoaPelamin";
 
 export default function InvitationPage() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -26,6 +27,7 @@ export default function InvitationPage() {
       <Event />
       <Gallery />
       <WeddingGift />
+      <DoaPelamin />
       <Footer />
     </main>
   );

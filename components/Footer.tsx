@@ -1,8 +1,22 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
     <footer className="py-10 text-center text-sm text-gray-400">
       <p>Terima kasih atas doa dan restu Anda</p>
-      <p className="mt-2 text-gold">Imel & Anggit</p>
+      <p className="mt-2 text-gold">Anggit & Melnia</p>
+      
+      {/* Watermark */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="mt-11 text-xs text-white/30"
+      >
+        © 2026 Crafted by Fawwaz Hirogest Putra Andaya
+      </motion.div>
     </footer>
   );
 }
