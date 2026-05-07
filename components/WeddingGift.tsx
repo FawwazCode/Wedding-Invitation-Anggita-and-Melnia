@@ -94,7 +94,7 @@ const GiftCard = ({ bankName, accountNumber, accountHolder, logoSrc }: GiftCardP
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0.9, 0.2, 1] }}
-              className="mb-1 text-xl font-serif text-white font-semibold tracking-wide"
+              className="mb-1 text-xl text-white font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}
             >
               {bankName}
             </motion.h3>
@@ -105,7 +105,7 @@ const GiftCard = ({ bankName, accountNumber, accountHolder, logoSrc }: GiftCardP
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-              className="text-sm text-white/70 font-light"
+              className="text-sm text-white/70" style={{ fontFamily: 'Arial, sans-serif' }}
             >
               {accountHolder}
             </motion.p>
@@ -120,14 +120,14 @@ const GiftCard = ({ bankName, accountNumber, accountHolder, logoSrc }: GiftCardP
           transition={{ duration: 0.6, delay: 0.4, ease: [0.2, 0.9, 0.2, 1] }}
           className="flex items-center justify-between rounded-[16px] border border-white/10 bg-gradient-to-r from-white/8 to-white/4 px-5 py-4 backdrop-blur-sm"
         >
-          <span className="font-mono text-2xl tracking-[0.2em] text-white font-medium">
+          <span className="text-2xl tracking-[0.2em] text-white font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
             {accountNumber}
           </span>
           <motion.button
             onClick={handleCopy}
             whileHover={{ scale: 1.08, boxShadow: "0 8px 25px rgba(201,169,110,0.3)" }}
             whileTap={{ scale: 0.96 }}
-            className="relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-gold via-[#d4af37] to-[#f1c462] px-4 py-2.5 text-sm font-semibold text-black transition-all duration-300 shadow-lg"
+            className="relative flex items-center gap-2 rounded-xl bg-gradient-to-r from-gold via-[#d4af37] to-[#f1c462] px-4 py-2.5 text-sm font-semibold text-black transition-all duration-300 shadow-lg" style={{ fontFamily: 'Arial, sans-serif' }}
           >
             <motion.div
               animate={copied ? { rotate: 360 } : { rotate: 0 }}
@@ -155,13 +155,13 @@ const giftData = [
   {
     bankName: "Bank Central Asia (BCA)",
     accountNumber: "7660557185",
-    accountHolder: "Anggita Kurniawan",
+    accountHolder: "ANGGITA KURNIAWAN",
     logoSrc: "/images/logo-bca.png",
   },
   {
     bankName: "Bank Central Asia (BCA)",
     accountNumber: "7660538105",
-    accountHolder: "Melnia Riska Ramadhani",
+    accountHolder: "MELNIA RISKA RAMADHANI",
     logoSrc: "/images/logo-bca.png",
   },
 ];
@@ -195,7 +195,7 @@ export default function WeddingGift() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="text-4xl font-serif uppercase tracking-[0.2em] text-white drop-shadow-[0_8px_30px_rgba(255,255,255,0.25)] sm:text-5xl"
+          className="text-4xl uppercase tracking-[0.2em] text-white drop-shadow-[0_8px_30px_rgba(255,255,255,0.25)] sm:text-5xl" style={{ fontFamily: 'Arial, sans-serif' }}
         >
           Wedding Gift
         </motion.h2>
@@ -206,7 +206,7 @@ export default function WeddingGift() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/90 sm:text-base relative z-20"
+          className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/90 sm:text-base relative z-20" style={{ fontFamily: 'Arial, sans-serif' }}
         >
           Doa restu Anda merupakan anugerah yang paling bermakna bagi kami. 
           Namun, jika Anda ingin memberikan hadiah, kami sangat berterima kasih.
