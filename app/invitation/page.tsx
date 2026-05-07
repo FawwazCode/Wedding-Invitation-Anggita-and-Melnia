@@ -20,7 +20,7 @@ export default function InvitationPage() {
   }, []);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <audio ref={audioRef} src="/audio/wedding-music.mp3" loop className="hidden" />
       <Hero />
       <BrideGroom />

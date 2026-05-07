@@ -45,31 +45,32 @@ export default function Hero() {
             <br />
           </p>
           <div className="text-center lg:text-left space-y-4">
-
   {/* Nama 1 */}
-  <h1 className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl leading-tight text-white`}>
-    Anggita Kurniawan
-  </h1>
-
-  {/* Orang tua 1 */}
-  <p className="text-sm text-white/70 sm:text-base">
-    Putra Pertama dari Bpk. Aris Karyono & Ibu Murni
-  </p>
-
-  {/* AND */}
-  <p className={`${greatVibes.className} text-white/80 text-3xl tracking-wide`}>
-    And
-  </p>
-
-  {/* Nama 2 */}
   <h1 className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl leading-tight text-white`}>
     Melnia Riska Ramadhani
   </h1>
 
-  {/* Orang tua 2 */}
+  {/* Orang tua 1 */}
   <p className="text-sm text-white/70 sm:text-base">
     Putri Pertama dari Bpk. Suhadi (Tembong) & Ibu Dwi Lestari
   </p>
+
+  {/* AND */}
+  <p className={`${greatVibes.className} text-white/80 text-3xl tracking-wide`}>
+    and
+  </p>
+
+  {/* Nama 2 */}
+  <h1 className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl leading-tight text-white`}>
+    Anggita Kurniawan
+  </h1>
+
+  {/* Orang tua 2 */}
+  <p className="text-sm text-white/70 sm:text-base">
+    Putra Pertama dari Bpk. Aris Karyono & Ibu Murni
+  </p>
+
+
 
 </div>
 
