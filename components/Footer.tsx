@@ -15,7 +15,7 @@ export default function Footer() {
         transition={{ duration: 2, delay: 1 }}
         className="mt-11 text-xs text-white/50" style={{ fontFamily: 'Arial, sans-serif' }}
       >
-        © 2026 Crafted by Fawwaz Hirogest | 0859 3985 9097 | hirogest23@gmail.com
+        © 2026 Crafted by Fawwaz | 0859 3985 9097 | hirogest23@gmail.com
       </motion.div>
     </footer>
   );
