@@ -119,7 +119,7 @@ export default function DoaPelamin() {
               className="absolute inset-0 bg-white/5 rounded-2xl sm:rounded-3xl blur-lg sm:blur-xl"
             />
             <blockquote className="relative text-lg sm:text-xl md:text-2xl leading-relaxed text-white/90 font-light">
-              "Semoga Allah memberkahimu di waktu bahagia dan memberkahi di waktu susah dan mengumpulkan kalian berdua dalam kebaikan"
+              "Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah dan mengumpulkan kalian berdua dalam kebaikan"
             </blockquote>
           </motion.div>
 
