@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 import { Great_Vibes } from "next/font/google";
 
@@ -10,8 +10,12 @@ const greatVibes = Great_Vibes({
   variable: "--font-great-vibes",
 });
 
-const containerVariants = {
-  hidden: { opacity: 0 },
+const smoothEase = [0.2, 0.9, 0.2, 1] as const;
+
+const containerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
   visible: {
     opacity: 1,
     transition: {
@@ -21,15 +25,19 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.95,
+  },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
       duration: 0.9,
-      ease: "easeInOut",
+      ease: smoothEase,
     },
   },
 };
@@ -65,7 +73,7 @@ export default function DoaPelamin() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 0.15, x: 0 }}
         transition={{ duration: 2, delay: 1 }}
-        className="absolute top-20 left-10 h-24 w-24 rounded-full border border-white/10 blur-xl sm:h-32 sm:w-32 sm:blur-2xl"
+        className="absolute left-10 top-20 h-24 w-24 rounded-full border border-white/10 blur-xl sm:h-32 sm:w-32 sm:blur-2xl"
       />
 
       <motion.div
@@ -94,7 +102,7 @@ export default function DoaPelamin() {
               transition={{
                 duration: 2,
                 delay: 2,
-                ease: "easeInOut",
+                ease: smoothEase,
                 rotate: {
                   duration: 20,
                   repeat: Infinity,
@@ -107,14 +115,22 @@ export default function DoaPelamin() {
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
-                  transition={{ duration: 2, delay: 2.2 }}
+                  transition={{
+                    duration: 2,
+                    delay: 2.2,
+                    ease: smoothEase,
+                  }}
                   className="h-[1px] w-16 origin-left bg-gradient-to-r from-transparent via-white/30 to-transparent sm:w-20 md:w-24"
                 />
 
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ duration: 0.5, delay: 2.5 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 2.5,
+                    ease: smoothEase,
+                  }}
                   className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-white/40"
                 />
               </div>
@@ -134,7 +150,7 @@ export default function DoaPelamin() {
                 transition={{
                   duration: 1.5,
                   delay: 0.8,
-                  ease: "easeInOut",
+                  ease: smoothEase,
                 }}
                 className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-transparent via-white/60 to-transparent"
               />
@@ -146,7 +162,7 @@ export default function DoaPelamin() {
               transition={{
                 duration: 1,
                 delay: 1.2,
-                ease: "easeInOut",
+                ease: smoothEase,
               }}
               className="mt-4 h-px origin-center bg-white/30"
               style={{ width: "5rem" }}
@@ -160,14 +176,18 @@ export default function DoaPelamin() {
             transition={{
               duration: 0.9,
               delay: 0.5,
-              ease: "easeInOut",
+              ease: smoothEase,
             }}
             className="relative mx-auto max-w-3xl"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 0.2, scale: 1 }}
-              transition={{ duration: 1.5, delay: 1.5 }}
+              transition={{
+                duration: 1.5,
+                delay: 1.5,
+                ease: smoothEase,
+              }}
               className="absolute inset-0 rounded-2xl bg-white/5 blur-lg sm:rounded-3xl sm:blur-xl"
             />
 
@@ -185,7 +205,7 @@ export default function DoaPelamin() {
             transition={{
               duration: 0.9,
               delay: 0.7,
-              ease: "easeInOut",
+              ease: smoothEase,
             }}
             className="relative text-sm uppercase tracking-wide text-white/60 md:text-base"
           >
@@ -195,7 +215,7 @@ export default function DoaPelamin() {
               transition={{
                 duration: 1,
                 delay: 1.8,
-                ease: "easeInOut",
+                ease: smoothEase,
               }}
               className="absolute -bottom-1 left-1/2 h-px -translate-x-1/2 bg-white/20"
             />
