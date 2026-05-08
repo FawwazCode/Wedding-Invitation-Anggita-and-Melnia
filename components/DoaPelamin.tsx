@@ -93,7 +93,7 @@ export default function DoaPelamin() {
           {/* Header */}
           <motion.div
             variants={itemVariants}
-            className="relative flex flex-col items-center"
+            className="relative flex flex-col items-center -mt-20 sm:-mt-24 md:-mt-32"
           >
             {/* Decorative Element */}
             <motion.div
