@@ -29,7 +29,7 @@ const itemVariants = {
     scale: 1,
     transition: {
       duration: 0.9,
-      ease: [0.2, 0.9, 0.2, 1],
+      ease: "easeInOut",
     },
   },
 };
@@ -94,7 +94,7 @@ export default function DoaPelamin() {
               transition={{
                 duration: 2,
                 delay: 2,
-                ease: [0.2, 0.9, 0.2, 1],
+                ease: "easeInOut",
                 rotate: {
                   duration: 20,
                   repeat: Infinity,
@@ -134,7 +134,7 @@ export default function DoaPelamin() {
                 transition={{
                   duration: 1.5,
                   delay: 0.8,
-                  ease: [0.2, 0.9, 0.2, 1],
+                  ease: "easeInOut",
                 }}
                 className="absolute -bottom-2 left-0 h-[2px] bg-gradient-to-r from-transparent via-white/60 to-transparent"
               />
@@ -146,7 +146,7 @@ export default function DoaPelamin() {
               transition={{
                 duration: 1,
                 delay: 1.2,
-                ease: [0.2, 0.9, 0.2, 1],
+                ease: "easeInOut",
               }}
               className="mt-4 h-px origin-center bg-white/30"
               style={{ width: "5rem" }}
@@ -160,7 +160,7 @@ export default function DoaPelamin() {
             transition={{
               duration: 0.9,
               delay: 0.5,
-              ease: [0.2, 0.9, 0.2, 1],
+              ease: "easeInOut",
             }}
             className="relative mx-auto max-w-3xl"
           >
@@ -185,7 +185,7 @@ export default function DoaPelamin() {
             transition={{
               duration: 0.9,
               delay: 0.7,
-              ease: [0.2, 0.9, 0.2, 1],
+              ease: "easeInOut",
             }}
             className="relative text-sm uppercase tracking-wide text-white/60 md:text-base"
           >
@@ -195,7 +195,7 @@ export default function DoaPelamin() {
               transition={{
                 duration: 1,
                 delay: 1.8,
-                ease: [0.2, 0.9, 0.2, 1],
+                ease: "easeInOut",
               }}
               className="absolute -bottom-1 left-1/2 h-px -translate-x-1/2 bg-white/20"
             />
